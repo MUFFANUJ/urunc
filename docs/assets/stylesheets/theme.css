@@ -179,3 +179,14 @@
   display: none; /* Hide light images in dark mode */
 }
 
+.md-clipboard {
+  opacity: 1 !important;
+}
+
+.md-clipboard:hover {
+  background-color: var(--md-accent-fg-color--transparent);
+}
+
+[data-md-color-scheme="slate"] .md-clipboard:not(:hover) {
+  color: var(--md-default-fg-color--light);
+}
