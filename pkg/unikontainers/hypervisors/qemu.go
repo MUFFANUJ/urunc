@@ -61,7 +61,7 @@ func (q *Qemu) Execve(args types.ExecArgs, ukernel types.Unikernel) error {
 	cmdString += " -L /usr/share/qemu"   // Set the path for qemu bios/data
 	cmdString += " -cpu host"            // Choose CPU
 	cmdString += " -enable-kvm"          // Enable KVM to use CPU virt extensions
-	cmdString += " -nographic -vga none" // Disable graphic output
+	cmdString += " -nographic -vga none -nodefaults -serial stdio" // Disable graphic output and suppress BIOS control characters
 
 	if args.VCPUs > 0 {
 		cmdString += fmt.Sprintf(" -smp %d", args.VCPUs)
